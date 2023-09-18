@@ -8,7 +8,6 @@ import {Routes,Route} from 'react-router-dom'
 function App() {
   return (
     <div className="App">
-     skj
     <Routes>
     <Route path='/userform' element={<UserForm/>}/>
     <Route path='/' element={<Users/>}/>

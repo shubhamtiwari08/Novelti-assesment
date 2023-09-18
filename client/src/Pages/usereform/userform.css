@@ -1,13 +1,41 @@
+form{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  align-items: center;
+}
 
+.form-contianer{
+  display: flex;
+  position: relative;
+  width: 50%;
+  margin-top: 1rem;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
 
-/* Form container */
-.container {
-    max-width: 500px; /* Adjust the max-width as needed */
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-  }
-  
+.back-btn{
+  position: absolute;
+  top: 0;
+  left: 1rem;
+}
+
+.user-img{
+  border-top: 1px solid black ;
+}
+
+.user-img img{
+  width: 10rem;
+}
+
+.wrap-input{
+  display: flex;
+  align-items: center;
+}
+
   /* Form title */
   h1 {
     font-size: 24px;
@@ -18,16 +46,16 @@
   label {
     display: block;
     margin-top: 10px;
-    font-weight: bold;
   }
   
   input[type="text"],
   input[type="email"],
   input[type="tel"] {
-    width: 40%;
+    width: 90%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: none;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
     border-radius: 4px;
     font-size: 16px;
   }
@@ -40,9 +68,8 @@
   
   /* Submit button */
   button[type="submit"] {
-    background-color: #007bff;
-    color: white;
     border: none;
+    width: 40%;
     border-radius: 4px;
     padding: 10px 20px;
     cursor: pointer;
@@ -50,9 +77,6 @@
     transition: background-color 0.2s;
   }
   
-  button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
   
   /* Error message for invalid input */
   .error-message {

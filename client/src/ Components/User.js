@@ -1,14 +1,17 @@
 import React from 'react'
+import './user.css'
 
 function User() {
   return (
-    <div>
-      <p>name:</p>
-      <p>email:</p>
-      <p>phone no.</p>
-      <button>edit</button>
-      <button>delete</button>
-    </div>
+    <tr>
+      <td>name:</td>
+      <td>email:</td>
+      <td>phone no.</td>
+      <td>
+      <button className='secondary-btn'>edit</button>
+      <button className='secondary-btn'>delete</button>
+      </td>
+    </tr>
   )
 }
 
