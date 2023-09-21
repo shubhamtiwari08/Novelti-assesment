@@ -37,7 +37,7 @@ const singleUserData = allUsers.filter(user => String(user?.firstName) === name)
   
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
-    initialValues,
+    initialValues:!singleUserData ? initialValues : singleUserData,
     validationSchema: signUpSchema,
     onSubmit: !name ? (values) => {
      
@@ -87,7 +87,7 @@ const singleUserData = allUsers.filter(user => String(user?.firstName) === name)
               type="text"
               id="firstName"
               name="firstName"
-              value={values.firstName || singleUserData?.firstName}
+              value={values.firstName}
               onChange={handleChange}
               onBlur={handleBlur}
             />
@@ -99,7 +99,7 @@ const singleUserData = allUsers.filter(user => String(user?.firstName) === name)
               type="text"
               id="lastName"
               name="lastName"
-              value={values.lastName || singleUserData?.lastName}
+              value={values.lastName}
               onChange={handleChange}
               onBlur={handleBlur}
             />
@@ -113,7 +113,7 @@ const singleUserData = allUsers.filter(user => String(user?.firstName) === name)
               type="email"
               id="email"
               name="email"
-              value={values.email || singleUserData?.email}
+              value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
             />
@@ -125,7 +125,7 @@ const singleUserData = allUsers.filter(user => String(user?.firstName) === name)
               type="tel"
               id="mobileNo"
               name="mobileNo"
-              value={values.mobileNo || singleUserData?.mobileNo}
+              value={values.mobileNo}
               onChange={handleChange}
               onBlur={handleBlur}
             />
@@ -139,7 +139,7 @@ const singleUserData = allUsers.filter(user => String(user?.firstName) === name)
               type="text"
               id="address1"
               name="address1"
-              value={values.address1 || singleUserData?.address1}
+              value={values.address1}
               onChange={handleChange}
               onBlur={handleBlur}
             />
@@ -151,7 +151,7 @@ const singleUserData = allUsers.filter(user => String(user?.firstName) === name)
               type="text"
               id="address2"
               name="address2"
-              value={values.address2 || singleUserData?.address2}
+              value={values.address2}
               onChange={handleChange}
               onBlur={handleBlur}
             />
@@ -164,7 +164,7 @@ const singleUserData = allUsers.filter(user => String(user?.firstName) === name)
             <select
               id="country"
               name="country"
-              value={values.country || singleUserData?.country}
+              value={values.country}
               onChange={handleChange}
               onClick={(e)=>setCountryName(e.target.value)}
               onBlur={handleBlur}
@@ -181,7 +181,7 @@ const singleUserData = allUsers.filter(user => String(user?.firstName) === name)
             <select
             id="state"
             name="state"
-            value={values.state || singleUserData?.state}
+            value={values.state}
             onChange={handleChange}
             onClick={(e)=>setStateName(e.target.value)}
             onBlur={handleBlur}
@@ -202,7 +202,7 @@ const singleUserData = allUsers.filter(user => String(user?.firstName) === name)
               type="text"
               id="city"
               name="city"
-              value={values.city || singleUserData?.city}
+              value={values.city}
               onChange={handleChange}
               onBlur={handleBlur}
             ><option value="">Select city</option>
@@ -218,7 +218,7 @@ const singleUserData = allUsers.filter(user => String(user?.firstName) === name)
               type="text"
               id="zipCode"
               name="zipCode"
-              value={values.zipCode || singleUserData?.zipCode}
+              value={values.zipCode}
               onChange={handleChange}
               onBlur={handleBlur}
             />
