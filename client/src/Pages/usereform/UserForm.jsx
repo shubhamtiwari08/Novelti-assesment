@@ -25,12 +25,14 @@ function UserForm() {
 
   const Navigate = useNavigate();
 
-  const {createUser} = useContext(userContext)
+  const {createUser,allUsers} = useContext(userContext)
 
   const [countryName, setCountryName] = useState("");
   const [stateName, setStateName] = useState("");
 
   
+
+const singleUserData = allUsers.filter(user => String(user?.firstName) === name)[0]
 
   
 
@@ -59,7 +61,7 @@ function UserForm() {
   const city= City.getCitiesOfState(countryWithCode?.isoCode,stateWithCode?.isoCode)
 
  
-
+ 
 
   return (
     <div className="container form-contianer">
@@ -82,7 +84,7 @@ function UserForm() {
               type="text"
               id="firstName"
               name="firstName"
-              value={values.firstName}
+              value={values.firstName || singleUserData?.firstName}
               onChange={handleChange}
               onBlur={handleBlur}
             />
@@ -94,7 +96,7 @@ function UserForm() {
               type="text"
               id="lastName"
               name="lastName"
-              value={values.lastName}
+              value={values.lastName || singleUserData?.lastName}
               onChange={handleChange}
               onBlur={handleBlur}
             />
@@ -108,7 +110,7 @@ function UserForm() {
               type="email"
               id="email"
               name="email"
-              value={values.email}
+              value={values.email || singleUserData?.email}
               onChange={handleChange}
               onBlur={handleBlur}
             />
@@ -120,7 +122,7 @@ function UserForm() {
               type="tel"
               id="mobileNo"
               name="mobileNo"
-              value={values.mobileNo}
+              value={values.mobileNo || singleUserData?.mobileNo}
               onChange={handleChange}
               onBlur={handleBlur}
             />
@@ -134,7 +136,7 @@ function UserForm() {
               type="text"
               id="address1"
               name="address1"
-              value={values.address1}
+              value={values.address1 || singleUserData?.address1}
               onChange={handleChange}
               onBlur={handleBlur}
             />
@@ -146,7 +148,7 @@ function UserForm() {
               type="text"
               id="address2"
               name="address2"
-              value={values.address2}
+              value={values.address2 || singleUserData?.address2}
               onChange={handleChange}
               onBlur={handleBlur}
             />
@@ -159,7 +161,7 @@ function UserForm() {
             <select
               id="country"
               name="country"
-              value={values.country}
+              value={values.country || singleUserData?.country}
               onChange={handleChange}
               onClick={(e)=>setCountryName(e.target.value)}
               onBlur={handleBlur}
@@ -176,7 +178,7 @@ function UserForm() {
             <select
             id="state"
             name="state"
-            value={values.state}
+            value={values.state || singleUserData.state}
             onChange={handleChange}
             onClick={(e)=>setStateName(e.target.value)}
             onBlur={handleBlur}
@@ -197,7 +199,7 @@ function UserForm() {
               type="text"
               id="city"
               name="city"
-              value={values.city}
+              value={values.city || singleUserData?.city}
               onChange={handleChange}
               onBlur={handleBlur}
             ><option value="">Select city</option>
@@ -213,7 +215,7 @@ function UserForm() {
               type="text"
               id="zipCode"
               name="zipCode"
-              value={values.zipCode}
+              value={values.zipCode || singleUserData?.zipCode}
               onChange={handleChange}
               onBlur={handleBlur}
             />
