@@ -36,18 +36,20 @@ const singleUserData = allUsers.filter(user => String(user?.firstName) === name)
 
   
 
-  const { values, errors, touched,isSubmitting, handleBlur, handleChange, handleSubmit } = useFormik({
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues,
     validationSchema: signUpSchema,
-    onSubmit: (values) => {
+    onSubmit: !name ? (values) => {
      
       if(!name){createUser(values)
-      if(name){
-        updateUser(singleUserData?._id,values)
-      }
       if(values){
         Navigate('/')
       }}
+    }:(values)=>{
+      updateUser(singleUserData._id,values)
+      if(values){
+        Navigate('/')
+      }
     },
   });
 
