@@ -25,7 +25,7 @@ function UserForm() {
 
   const Navigate = useNavigate();
 
-  const {createUser,allUsers} = useContext(userContext)
+  const {createUser,allUsers,updateUser} = useContext(userContext)
 
   const [countryName, setCountryName] = useState("");
   const [stateName, setStateName] = useState("");
@@ -40,16 +40,17 @@ const singleUserData = allUsers.filter(user => String(user?.firstName) === name)
     initialValues,
     validationSchema: signUpSchema,
     onSubmit: (values) => {
+     
       if(!name){createUser(values)
+      if(name){
+        updateUser(singleUserData?._id,values)
+      }
       if(values){
         Navigate('/')
       }}
-     
-
     },
   });
 
-  console.log(isSubmitting)
   const country = Country.getAllCountries();
   const countryWithCode = country.filter((item) => item.name === countryName)[0]
 
@@ -178,7 +179,7 @@ const singleUserData = allUsers.filter(user => String(user?.firstName) === name)
             <select
             id="state"
             name="state"
-            value={values.state || singleUserData.state}
+            value={values.state || singleUserData?.state}
             onChange={handleChange}
             onClick={(e)=>setStateName(e.target.value)}
             onBlur={handleBlur}

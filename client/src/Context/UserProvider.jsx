@@ -51,8 +51,27 @@ function UserProvider({children}) {
       }
     }
 
+
+    const updateUser = async(id,updates)=>{
+      try { 
+        const res = await fetch(`http://localhost:3001/api/users/${id}`,{
+          method:"POST",
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json', 
+        },
+        body: JSON.stringify(updates) 
+        })
+        const data = await res.json()
+        setAllUsers(data.users)
+      
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
   return (
-    <userContext.Provider value={{allUsers,getAllUsers,createUser,deleteUser}}>{children}</userContext.Provider>
+    <userContext.Provider value={{allUsers,getAllUsers,updateUser,createUser,deleteUser}}>{children}</userContext.Provider>
   )
 }
 
