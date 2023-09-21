@@ -10,6 +10,7 @@ function App() {
     <div className="App">
     <Routes>
     <Route path='/userform' element={<UserForm/>}/>
+    <Route path='/userform/:name' element={<UserForm/>}/>
     <Route path='/' element={<Users/>}/>
     <Route path='/users/:name' element={<SingleUser/>}/>
 

@@ -36,6 +36,12 @@ form{
   align-items: center;
 }
 
+/*form-error*/
+.form-error{
+  font-size: 8px;
+  color: red;
+}
+
   /* Form title */
   h1 {
     font-size: 24px;
@@ -47,6 +53,8 @@ form{
     display: block;
     margin-top: 10px;
   }
+
+
   
   input[type="text"],
   input[type="email"],
@@ -75,6 +83,17 @@ form{
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.2s;
+  }
+
+  select{
+    width: 15rem;
+    padding: 10px;
+    margin-right: 1rem;
+    margin-bottom: 15px;
+    border: none;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    border-radius: 4px;
+    font-size: 16px;
   }
   
   

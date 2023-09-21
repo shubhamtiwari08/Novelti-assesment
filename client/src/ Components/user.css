@@ -4,3 +4,18 @@
     gap: 1rem;
     border: 1px solid red;
 }
+
+tr{
+    position: relative;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+tr:hover{
+  background-color: lightblue;
+}
+
+ 
+
+ 
+ 

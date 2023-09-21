@@ -1,0 +1,18 @@
+.user-info-box{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    width: 30rem;
+    height: 100%;
+    margin: 10rem auto ;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5rem;
+    padding: 1rem;
+}
+
+.user-info-box div{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(193, 210, 225);
+    padding: 1rem;
+    border-radius: 10px;
+}
