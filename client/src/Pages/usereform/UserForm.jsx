@@ -213,7 +213,7 @@ const singleUserData = allUsers.filter(user => String(user?.firstName) === name)
           </div>
           <div>
             <label htmlFor="zipCode">Zip Code</label>
-            <p className={touched.zipCode && errors?.zipCode ? "form-error" :""} >{errors?.zipCode}</p>
+            <p className={touched.zipCode && errors?.zipCode ? "form-error" :""} >{touched.zipCode && errors?.zipCode}</p>
             <input
               type="text"
               id="zipCode"
