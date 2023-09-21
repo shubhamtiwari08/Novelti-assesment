@@ -9,7 +9,7 @@ function UserProvider({children}) {
 
     const getAllUsers = async()=>{
         try {
-            const res = await fetch("http://localhost:3001/api/users")
+            const res = await fetch("https://novelti-backend-6fz5.onrender.com/api/users")
             const data = await res.json()
 
            setAllUsers(data)
@@ -21,7 +21,7 @@ function UserProvider({children}) {
 
     const deleteUser = async(id) =>{
       try {
-        const res = await fetch(`http://localhost:3001/api/users/${id}`,{
+        const res = await fetch(`https://novelti-backend-6fz5.onrender.com/api/users/${id}`,{
           method:"DELETE",
         })
         const data = await res.json()
@@ -35,7 +35,7 @@ function UserProvider({children}) {
 
     const createUser = async(newUser)=>{
       try { 
-        const res = await fetch("http://localhost:3001/api/users",{
+        const res = await fetch("https://novelti-backend-6fz5.onrender.com/api/users",{
           method:"POST",
           headers: {
             'Accept': 'application/json',
@@ -54,7 +54,7 @@ function UserProvider({children}) {
 
     const updateUser = async(id,updates)=>{
       try { 
-        const res = await fetch(`http://localhost:3001/api/users/${id}`,{
+        const res = await fetch(`https://novelti-backend-6fz5.onrender.com/api/users/${id}`,{
           method:"POST",
           headers: {
             'Accept': 'application/json',
